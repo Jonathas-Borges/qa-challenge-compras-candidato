@@ -6,7 +6,7 @@ Conteúdo do pacote:
 
 | Arquivo | Para quê |
 |---|---|
-| `qa-challenge-compras-*.tar` | Imagem Docker da aplicação (frontend + API) |
+| `qa-challenge-compras-*.tar` | Imagem Docker da aplicação (frontend + API) — baixada da Release (veja abaixo) |
 | `compose.yaml` | Sobe a aplicação e um PostgreSQL local |
 | `.env.example` | Variáveis opcionais (porta, tempos da disputa, senha demo) |
 | `HISTORIAS.md` | Histórias de usuário e critérios de aceitação |
@@ -16,6 +16,33 @@ Conteúdo do pacote:
 
 - Docker 24+ com Docker Compose v2 (`docker compose version`)
 - ~1,5 GB livres; porta `8080` livre (ou altere `APP_PORT`)
+
+## Baixar a imagem (`.tar`)
+
+A imagem Docker é grande e fica anexada na **Release `v1.0`** do repositório, não no código. Baixe o `.tar` por um dos caminhos:
+
+- **Navegador:** abra a página de *Releases* do repositório, entre na **v1.0** e baixe `qa-challenge-compras-1.0.tar` (e o `SHA256SUMS`).
+- **GitHub CLI (`gh`):**
+
+  ```bash
+  gh release download v1.0 -R Jonathas-Borges/qa-challenge-compras-candidato \
+    -p 'qa-challenge-compras-1.0.tar' -p 'SHA256SUMS'
+  ```
+
+- **curl:**
+
+  ```bash
+  curl -L -o qa-challenge-compras-1.0.tar \
+    https://github.com/Jonathas-Borges/qa-challenge-compras-candidato/releases/download/v1.0/qa-challenge-compras-1.0.tar
+  ```
+
+Confira a integridade (opcional, recomendado) com o `SHA256SUMS` que acompanha o pacote:
+
+```bash
+sha256sum -c SHA256SUMS      # deve imprimir: qa-challenge-compras-1.0.tar: OK
+```
+
+Coloque o `.tar` na mesma pasta do `compose.yaml` antes de continuar.
 
 ## Subir o ambiente
 

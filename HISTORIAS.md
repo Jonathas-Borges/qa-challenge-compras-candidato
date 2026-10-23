@@ -69,6 +69,7 @@ Ambiente fictício e didático: sem compras reais, sem dados pessoais reais e se
 - **CA06:** compras `DESERTA` não podem ser homologadas.
 - **CA07:** a compra mantém histórico da criação, publicação, lances e homologação, com identificador do responsável e horários.
 - **CA08:** fornecedores podem consultar o resultado de uma compra publicada, mas nunca homologá-la.
+- **CA09:** a tela de resultado permite baixar um relatório (PDF) da compra; os valores do relatório devem conferir com os exibidos na tela e retornados pela API.
 
-**Exemplos de análise esperada:** pré-condições, passagem por perfis, maior/menor lance, duplicidade, acesso indevido, histórico, sessão expirada.
+**Exemplos de análise esperada:** pré-condições, passagem por perfis, maior/menor lance, duplicidade, acesso indevido, histórico, sessão expirada, conferência do relatório baixado contra a tela/API.
 
